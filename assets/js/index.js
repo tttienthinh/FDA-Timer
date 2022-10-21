@@ -2,8 +2,8 @@ elem = document.getElementById("timer")
 elem_used_time = document.getElementById("used_time")
 time = 0;
 running = false;
-time_6 = [60, 5*60, 6*60, 6*60+15];
-time_5 = [60, 4*60, 5*60, 5*60+15];
+time_6 = [60, 5*60, 6*60, 6*60+1, 6*60+15];
+time_5 = [60, 4*60, 5*60, 5*60+1, 5*60+15];
 used_time = 6;
 liste_time = time_6;
 const audio = new Audio();
@@ -39,7 +39,7 @@ setInterval(function () {
     if (running) {
         time += 1;
         mins = Math.floor(time/60);
-        if (liste_time.includes(time) || time > liste_time[3]) {
+        if (liste_time.includes(time) || time > liste_time[4]) {
             audio.pause();
             audio.currentTime = 0;
             audio.play();
